@@ -1,0 +1,289 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 248 416)
+	(text "MSS" (rect 5 0 25 12)(font "Arial" ))
+	(text "inst" (rect 8 384 20 396)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 20 12)(font "Arial" ))
+		(text "clock" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetn" (rect 0 0 24 12)(font "Arial" ))
+		(text "resetn" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "start" (rect 0 0 17 12)(font "Arial" ))
+		(text "start" (rect 21 59 38 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ingresar" (rect 0 0 31 12)(font "Arial" ))
+		(text "ingresar" (rect 21 75 52 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "cambiar" (rect 0 0 31 12)(font "Arial" ))
+		(text "cambiar" (rect 21 91 52 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "cincocambio" (rect 0 0 48 12)(font "Arial" ))
+		(text "cincocambio" (rect 21 107 69 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "cinco" (rect 0 0 20 12)(font "Arial" ))
+		(text "cinco" (rect 21 123 41 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "verde" (rect 0 0 23 12)(font "Arial" ))
+		(text "verde" (rect 21 139 44 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "correcto" (rect 0 0 33 12)(font "Arial" ))
+		(text "correcto" (rect 21 155 54 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "tiempo" (rect 0 0 25 12)(font "Arial" ))
+		(text "tiempo" (rect 21 171 46 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "incorrecto" (rect 0 0 38 12)(font "Arial" ))
+		(text "incorrecto" (rect 21 187 59 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "tres_segundos" (rect 0 0 59 12)(font "Arial" ))
+		(text "tres_segundos" (rect 21 203 80 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "cr" (rect 0 0 8 12)(font "Arial" ))
+		(text "cr" (rect 21 219 29 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "fin" (rect 0 0 9 12)(font "Arial" ))
+		(text "fin" (rect 21 235 30 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "seg_rojo" (rect 0 0 34 12)(font "Arial" ))
+		(text "seg_rojo" (rect 21 251 55 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 1))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "en_matrix" (rect 0 0 40 12)(font "Arial" ))
+		(text "en_matrix" (rect 171 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 1))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "reset_ram" (rect 0 0 42 12)(font "Arial" ))
+		(text "reset_ram" (rect 169 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 1))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "reset_ingreso" (rect 0 0 54 12)(font "Arial" ))
+		(text "reset_ingreso" (rect 157 59 211 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 1))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "en_ledrojo" (rect 0 0 40 12)(font "Arial" ))
+		(text "en_ledrojo" (rect 171 75 211 87)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80)(line_width 1))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "en_verde" (rect 0 0 38 12)(font "Arial" ))
+		(text "en_verde" (rect 173 91 211 103)(font "Arial" ))
+		(line (pt 232 96)(pt 216 96)(line_width 1))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "modo_ram" (rect 0 0 44 12)(font "Arial" ))
+		(text "modo_ram" (rect 167 107 211 119)(font "Arial" ))
+		(line (pt 232 112)(pt 216 112)(line_width 1))
+	)
+	(port
+		(pt 232 128)
+		(output)
+		(text "modo_ingreso" (rect 0 0 56 12)(font "Arial" ))
+		(text "modo_ingreso" (rect 155 123 211 135)(font "Arial" ))
+		(line (pt 232 128)(pt 216 128)(line_width 1))
+	)
+	(port
+		(pt 232 144)
+		(output)
+		(text "reset_memoria1" (rect 0 0 64 12)(font "Arial" ))
+		(text "reset_memoria1" (rect 147 139 211 151)(font "Arial" ))
+		(line (pt 232 144)(pt 216 144)(line_width 1))
+	)
+	(port
+		(pt 232 160)
+		(output)
+		(text "modo_memoria1" (rect 0 0 67 12)(font "Arial" ))
+		(text "modo_memoria1" (rect 144 155 211 167)(font "Arial" ))
+		(line (pt 232 160)(pt 216 160)(line_width 1))
+	)
+	(port
+		(pt 232 176)
+		(output)
+		(text "led_correcto" (rect 0 0 49 12)(font "Arial" ))
+		(text "led_correcto" (rect 162 171 211 183)(font "Arial" ))
+		(line (pt 232 176)(pt 216 176)(line_width 1))
+	)
+	(port
+		(pt 232 192)
+		(output)
+		(text "led_error" (rect 0 0 36 12)(font "Arial" ))
+		(text "led_error" (rect 175 187 211 199)(font "Arial" ))
+		(line (pt 232 192)(pt 216 192)(line_width 1))
+	)
+	(port
+		(pt 232 208)
+		(output)
+		(text "uno" (rect 0 0 14 12)(font "Arial" ))
+		(text "uno" (rect 197 203 211 215)(font "Arial" ))
+		(line (pt 232 208)(pt 216 208)(line_width 1))
+	)
+	(port
+		(pt 232 224)
+		(output)
+		(text "dos" (rect 0 0 14 12)(font "Arial" ))
+		(text "dos" (rect 197 219 211 231)(font "Arial" ))
+		(line (pt 232 224)(pt 216 224)(line_width 1))
+	)
+	(port
+		(pt 232 240)
+		(output)
+		(text "tres" (rect 0 0 15 12)(font "Arial" ))
+		(text "tres" (rect 196 235 211 247)(font "Arial" ))
+		(line (pt 232 240)(pt 216 240)(line_width 1))
+	)
+	(port
+		(pt 232 256)
+		(output)
+		(text "visto" (rect 0 0 18 12)(font "Arial" ))
+		(text "visto" (rect 193 251 211 263)(font "Arial" ))
+		(line (pt 232 256)(pt 216 256)(line_width 1))
+	)
+	(port
+		(pt 232 272)
+		(output)
+		(text "x" (rect 0 0 4 12)(font "Arial" ))
+		(text "x" (rect 207 267 211 279)(font "Arial" ))
+		(line (pt 232 272)(pt 216 272)(line_width 1))
+	)
+	(port
+		(pt 232 288)
+		(output)
+		(text "ruido1" (rect 0 0 22 12)(font "Arial" ))
+		(text "ruido1" (rect 189 283 211 295)(font "Arial" ))
+		(line (pt 232 288)(pt 216 288)(line_width 1))
+	)
+	(port
+		(pt 232 304)
+		(output)
+		(text "ruido2" (rect 0 0 23 12)(font "Arial" ))
+		(text "ruido2" (rect 188 299 211 311)(font "Arial" ))
+		(line (pt 232 304)(pt 216 304)(line_width 1))
+	)
+	(port
+		(pt 232 320)
+		(output)
+		(text "contcambio" (rect 0 0 44 12)(font "Arial" ))
+		(text "contcambio" (rect 167 315 211 327)(font "Arial" ))
+		(line (pt 232 320)(pt 216 320)(line_width 1))
+	)
+	(port
+		(pt 232 336)
+		(output)
+		(text "modo" (rect 0 0 22 12)(font "Arial" ))
+		(text "modo" (rect 189 331 211 343)(font "Arial" ))
+		(line (pt 232 336)(pt 216 336)(line_width 1))
+	)
+	(port
+		(pt 232 352)
+		(output)
+		(text "en_guardar" (rect 0 0 46 12)(font "Arial" ))
+		(text "en_guardar" (rect 165 347 211 359)(font "Arial" ))
+		(line (pt 232 352)(pt 216 352)(line_width 1))
+	)
+	(port
+		(pt 232 368)
+		(output)
+		(text "guardado" (rect 0 0 36 12)(font "Arial" ))
+		(text "guardado" (rect 175 363 211 375)(font "Arial" ))
+		(line (pt 232 368)(pt 216 368)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 384)(line_width 1))
+	)
+)

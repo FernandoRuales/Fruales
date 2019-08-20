@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use IEEE.NUMERIC_STD.all;
+
+entity matrix is
+	port(numero: in std_logic_vector(6 downto 0);
+			sal1,sal2,sal3,sal4,sal5,sal6,sal7,sal8: out std_logic_vector(7 downto 0));
+end matrix;
+
+architecture sol of matrix is
+
+begin
+		process(numero)
+			begin
+				case numero is 
+						when "0000001" => sal1<="01111110";sal2<="10111101";sal3<="11011011";sal4<="11100111";sal5<="11100111";sal6<="11011011";sal7<="10111101";sal8<="01111110";  --EQUIS
+						when "0000010" => sal1<="11111101";sal2<="11111110";sal3<="11111101";sal4<="11111011";sal5<="11110111";sal6<="11101111";sal7<="11011111";sal8<="10111111";  --VISTO
+						when "0000100" => sal1<="11111111";sal2<="11111111";sal3<="11101111";sal4<="11011111";sal5<="10111111";sal6<="00000000";sal7<="11111111";sal8<="11111111";  --UNO
+						when "0001000" => sal1<="11111111";sal2<="11111111";sal3<="01110000";sal4<="01110110";sal5<="01110110";sal6<="00000110";sal7<="11111111";sal8<="11111111";  --DOS
+						when "0010000" => sal1<="11111111";sal2<="11111111";sal3<="01110110";sal4<="01110110";sal5<="01110110";sal6<="00000000";sal7<="11111111";sal8<="11111111";  --TRES
+						when "0100000" => sal1<="10101010";sal2<="10101010";sal3<="10101010";sal4<="10101010";sal5<="10101010";sal6<="10101010";sal7<="10101010";sal8<="10101010";  --RUIDO1
+						when "1000000" => sal1<="01010101";sal2<="01010101";sal3<="01010101";sal4<="01010101";sal5<="01010101";sal6<="01010101";sal7<="01010101";sal8<="01010101";  --RUIDO2
+						when others => sal1<="00000000";sal2<="00000000";sal3<="00000000";sal4<="00000000";sal5<="00000000";sal6<="00000000";sal7<="00000000";sal8<="00000000";     --OTROS	
+				end case;
+		end process;
+end sol;

@@ -1,0 +1,96 @@
+--MSS de la maquina
+
+LIBRARY IEEE;
+USE  IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+entity MSS is
+	port	(clock, resetn, start, ingresar, cambiar,cincocambio,cinco,verde,correcto,tiempo,incorrecto,cr,fin,seg_rojo: in std_logic;
+			en_matrix,reset_ram,modo_ram,modo_ingreso,reset_memoria1,modo_memoria1,led_correcto,led_error,uno,dos,tres,visto,x,ruido1,ruido2: out std_logic);
+end MSS;
+
+architecture sol of MSS is
+type estado is (ta,tb,tc,td,te,tf,tg1,tg2,th,ti1,ti2,ti3,ti4,ti5,tj,tk,ts,tt,tr,t1,tl);
+signal y: estado;
+begin
+MSS_transiciones:process(resetn,clock)
+	begin
+		if (resetn='0') then y<=ta;
+		elsif(clock'event and clock='1') then
+			case y is
+				when ta =>if start='1' then y<=tb;--presiono start
+										else y<=ta;end if;
+						when tb =>if start='0' then y<=tc;--suelto start
+										else y<=tb;end if;
+						when tc => y<=td;
+						when td => if ingresar='1' then y<=te;
+									elsif cambiar ='1' then y<=tp;
+									else y<=td;end if;
+						when te => if cinco = '1' then y<=tf;--espera a ingresar las 5 senales
+									else y<=te;
+						when tf => y<=tg--3 intentos
+						when tg => if correcto='1' then y<=th;
+										elsif incorrecto='1' then y<=ti1;
+										else y<=tg;
+						when th => if verde='1' then y<=td;
+										else y<=th;
+						when ti1=> y<=ti2;--dos intentos
+						when ti2=> if cinco = '1' then y<=tg1;--espera a ingresar las 5 senales
+									else y<=ti2;
+						when tg1=> if correcto='1' then y<=th;
+										elsif incorrecto='1' then y<=ti3;
+										else y<=tg1;
+						when ti3=> y<=ti4;--1 intento
+						when ti4=>  if cinco = '1' then y<=tg2;--espera a ingresar las 5 senales
+									else y<=ti4;
+						when tg2=> if correcto='1' then y<=th;
+										elsif incorrecto='1' then y<=ti5;
+										else y<=tg2;
+						when ti5=> if tiempo='1' then y<=tj;
+										else y<=ti5;--x
+						when tj=> y=>tk;
+						when tk=>  if tiempo='1' then y<=td;
+										else y<=tl;--ruido1
+						when tl=> 	y<=tk;--ruido2
+						
+						when tp=> if cincocambio='1' then y<=tq;
+										else  y<=tp;
+						when tq=> if cr='1' then y<=tr;
+										elsif fin='1' then y<=ts;
+										else y<=tq;
+						when tr=> if seg_rojo='1' then y<=td;
+										else t<=tr;
+						when ts=> y<=tt;
+						when tt=> y<=td;
+						end case;
+		end if;
+end process;
+
+MSS_salidas: process (y)
+		begin--poner todas las salidas como cero para poder activar cada bloque en el estado que se desea
+				
+				case y is 
+				when ta =>
+				when tb =>
+				when tc =>reset_ingreso<='0';reset_ram<='0';reset_ingreso<='0';
+				when td =>
+				when te =>modo_ingreso<='1';
+		      when tf =>tres<='1';
+				when tg =>tres<='1';
+            when tg1 =>dos<='1';
+            when tg2=>		
+				when th =>en_verde<='1';
+				when ti1=>dos<='1';		
+				when ti2=>dos<='1';
+				when ti3=>
+				when ti4=>
+				when ti5=>
+				when tj=>
+				when tk=>
+				when ts=>
+				when tt=>
+				when tr=>
+				when t1=>
+				when tl=>
+			end case;
+end process;
+end sol;

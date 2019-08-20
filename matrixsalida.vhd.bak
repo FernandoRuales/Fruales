@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use IEEE.NUMERIC_STD.all;
+
+entity matrixsalida is
+	port(jugo1,jugo2,jugo3,jugo4,jugo5,jugo6: in std_logic_vector(4 downto 0);
+			fila: out std_logic_vector(4 downto 0);
+			con1,con2,con3,con4,con5,con6: in std_logic_vector(4 downto 0);
+			clock,selector,reset: in std_logic;
+			salida: out std_logic_vector(5 downto 0));--salida es columna
+end matrixsalida;
+architecture sol of matrixsalida is
+signal r: std_logic_vector(2 downto 0);
+begin
+	PROCESS(clock,reset)
+		BEGIN
+			if reset='0' then
+				r<="000";
+			elsif (clock'event and clock='1') then
+				if (r>"101")then r<="000";
+				elsif(selector='1') then
+					if (r="000") then r<=r+"001"; salida<="100000";fila<=jugo1;
+					elsif (r="001") then r<=r+"001"; salida<="010000";fila<=jugo2;
+					elsif (r="010") then r<=r+"001"; salida<="001000";fila<=jugo3;
+					elsif (r="011") then r<=r+"001"; salida<="000100";fila<=jugo4;
+					elsif (r="100") then r<=r+"001"; salida<="000010";fila<=jugo5;
+					elsif (r="101") then r<=r+"001"; salida<="000001";fila<=jugo6;end if;
+				else
+					if (r="000") then r<=r+"001"; salida<="100000";fila<=con1;
+					elsif (r="001") then r<=r+"001"; salida<="010000";fila<=con2;
+					elsif (r="010") then r<=r+"001"; salida<="001000";fila<=con3;
+					elsif (r="011") then r<=r+"001"; salida<="000100";fila<=con4;
+					elsif (r="100") then r<=r+"001"; salida<="000010";fila<=con5;
+					elsif (r="101") then r<=r+"001"; salida<="000001";fila<=con6;end if;
+				end if;
+			end if;
+	end process;
+end sol;
